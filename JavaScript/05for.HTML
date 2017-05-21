@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+<P id = "result"></P>
+
+<button onclick="document.getElementById('result').innerHTML = c(3, 4)">来点我呀</button>
+
+<script type="text/javascript">
+	
+	var cars = ["Saab", "Volvo", "BMW"];
+	for (var i = 0; i < cars.length; i++) {
+		document.write(cars[i] + "</br>");
+	} 
+
+
+	var person = {name: "XUpan", age: 23, id: "1335"};
+	person.name = "Jaspon"
+	document.write(person.name);
+
+ 	var c = function sum(a, b) {
+
+		return a * b;
+	}
+
+
+</script>
+</body>
+</html>

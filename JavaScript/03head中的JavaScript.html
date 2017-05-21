@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title></title>
+
+		<style type="text/css">
+			button {
+				background-color: black;
+				color: white;
+				border-style: none;
+				width: 200px;
+				height: 44px;
+
+			}
+
+			button:hover {
+				background-color: gray;
+			}
+		</style>
+		
+	</head>
+	<body>
+
+		<h1>我的Web页面</h1>
+		<p id="demo">一个段落</p>
+		<button type="button" onclick="myFunction()">来，点我呀！</button>
+
+		<script type="text/javascript">
+			
+			function myFunction()
+			{
+				document.getElementById('demo').innerHTML="我的第一个JavaScript函数！"	
+			}
+		</script>
+	</body>
+</html>
