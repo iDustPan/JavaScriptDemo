@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ECMAScript Practice</title>
+</head>
+<body>
+
+    <script>
+
+        class User {
+            constructor(phone, userId, sex) {
+                this.phone = phone;
+                this.userId = userId;
+                this.sex = sex;
+            }
+
+            loadUserShoppingCart () {
+                console.log(`this is user's shopping cart!`)
+            }
+        }
+
+        let user = new User(1373814735, 0, 'male');
+        user.loadUserShoppingCart();
+
+    </script>
+</body>
+</html>

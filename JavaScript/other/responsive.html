@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            margin: 0 auto;
+        }
+    </style>
+
+</head>
+<body>
+
+    <div class="container" >
+
+    </div>
+
+    <script>
+        var container = document.querySelector(".container")
+        container.addEventListener("touchstart",  (e) => {
+            console.log(e)
+        });
+
+        container.addEventListener("touchmove", (e) => {
+            console.log(e)
+        });
+
+        container.addEventListener("touchend", (e) => {
+            console.log(e)
+        });
+
+        // changedTouchs 当前最新改变的触摸点集合
+        // targetTouchs 目标元素上的触摸点集合
+        // touchs 页面上所有触摸点的集合
+
+    </script>
+
+</body>
+</html>

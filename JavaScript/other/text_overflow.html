@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>text-overflow Demo</title>
+
+    <style>
+
+        .div-elippse {
+            white-space: nowrap;
+            width: 200px;
+            height: 40px;
+            margin-top: 10px ;
+            border: 1px solid black;
+            overflow: hidden;
+            -ms-text-overflow: ellipsis;
+            text-overflow: ellipsis;
+        }
+        .div-clip {
+            white-space: nowrap;
+            width: 200px;
+            height: 40px;
+            border: 1px solid black;
+            overflow: hidden;
+            -ms-text-overflow: clip;
+            text-overflow: clip;
+        }
+    </style>
+</head>
+<body>
+    <div class="div-clip">
+        This is a long story!This is a long story!This is a long story!This is a long story!
+    </div>
+    <div class="div-elippse">
+
+        This is a long story!This is a long story!This is a long story!This is a long story!
+    </div>
+</body>
+</html>

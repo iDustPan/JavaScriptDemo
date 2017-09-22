@@ -2,6 +2,7 @@
 <html>
 	<head>
 		<title>JavaScript第二课</title>
+		<meta charset="utf-8">
 	</head>
 	<body>
 
@@ -10,6 +11,21 @@
 		document.write("<h1>这是一个标题</h1>");
 		document.write("<p>这是一个段落</p>")
 		document.write("这样会显示吗？")
+
+			var person = {
+
+		    	name: "xupan",
+				age: 25,
+		    	desc: logPerson
+
+			}
+
+			function logPerson() {
+				return this.name + this.age
+            }
+
+            document.write(person.desc())
+
 		</script>
 
 	</body>

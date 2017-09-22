@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>transform demo</title>
+
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            background-color: #7A991A;
+            margin-top: 20px;
+            line-height: 100px;
+            text-align: center;
+            transition: transform 0.5s, background-color 0.5s, color 0.5s;
+            transition-timing-function: ease-out;
+        }
+        .translate:hover  {
+            transform: translate(20px,0);
+
+        }
+        .rotate:hover {
+            transform: rotate(45deg);
+        }
+        .scale:hover {
+            /*transform: scale(1.1);*/
+            background-color: #000;
+            color:white;
+            cursor: pointer;
+        }
+        .skew:hover {
+            /*transform: skewX(10deg);*/
+            transform: skewY(10deg);
+        }
+    </style>
+</head>
+<body>
+    <div class="translate">translate</div>
+    <div class="rotate">ratota</div>
+    <div class="scale">scale</div>
+    <div class="skew">skew</div>
+</body>
+</html>
