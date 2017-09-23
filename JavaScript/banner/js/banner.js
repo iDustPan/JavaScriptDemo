@@ -30,15 +30,13 @@ function configureBanner() {
     }
 
     var index = 1;
-    setInterval(()=>{
+    var timer = setInterval(()=>{
         index++;
         addTransition();
         setTranslateX(-index * bannerWidth);
     }, 2000);
 
     function changePoint(index) {
-        console.log(slides);
-        console.log(slides[index-1].classList);
         for(var i = 0; i < slides.length; i++) {
             slides[i].classList.remove('current');
         }
@@ -48,13 +46,56 @@ function configureBanner() {
     banner.addEventListener("transitionend", (e)=>{
         if (index >= 4){
             index = 1;
+        }else if(index <= 0 ){
+            index = 3;
+        }
             removeTransition();
             setTranslateX(-index*bannerWidth);
-        }else if(index <= 0 ){
-            index = 1;
-        }
         changePoint(index);
     });
+
+    var startX = 0;
+    var slideOffset = 0;
+    var isMoving = false;
+    banner.addEventListener('touchstart', (e)=>{
+        startX = e.touches[0].clientX;
+        slideOffset = 0;
+        isMoving = false;
+        removeTransition();
+        clearInterval(timer);
+    })
+
+    banner.addEventListener('touchmove', (e)=>{
+        isMoving = true;
+        slideOffset = e.touches[0].clientX - startX;
+        setTranslateX(-index*bannerWidth + slideOffset);
+    })
+
+    banner.addEventListener('touchend', (e)=>{
+        if (isMoving) {
+            if (Math.abs(slideOffset) >= bannerWidth / 3) {
+                if (slideOffset > 0){
+                    index--;
+                }else{
+                    index++;
+                }
+            }
+                console.log(index, slideOffset, bannerWidth);
+
+            addTransition();
+            setTranslateX(-index*bannerWidth);
+            clearInterval(timer);
+            timer = setInterval(()=>{
+                index++;
+                addTransition();
+                setTranslateX(-index * bannerWidth);
+            }, 2000);
+            isMoving = false;
+        }
+    });
+
 }
+
+
 
 
